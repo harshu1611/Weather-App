@@ -44,7 +44,7 @@ export default function Page1() {
   const getHeading=()=>{
     if(form!==""){
       document.getElementById("heading").style.marginLeft="-8vw";
-      setHeading(`Weather Report For ${form} is: ${main}`);
+      setHeading(`Weather Report For ${form} is:`);
     }
   }
   const changeMode=()=>{
@@ -100,7 +100,7 @@ export default function Page1() {
       setMain(data.weather[0].main);
     })
     .catch=(err)=>{
-      console.log("Server Down");
+      console.log("Server Down",err);
     }
    
 
@@ -114,7 +114,7 @@ export default function Page1() {
         <h1 id="headingPage1"> Weather On GO </h1>
         <label htmlfor="exampleFormControlInput1" className="form-label" id="formLabel">Enter City to Get Weather</label>
         <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter City" value={form} onChange={handleonChange}></input>
-        <button type="button" className="btn btn-primary" onClick={getApi}>Get Weather</button>        
+        <button type="button" className="btn btn-primary" onClick={getApi}>Get Weather</button>      
       <Weather weather={weather} heading={heading} feels={feels} min={min} max={max} humidity={humidity} wind={wind} main={main}/>
 
       <div className="footer" id="footer">

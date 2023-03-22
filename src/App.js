@@ -3,10 +3,8 @@ import './App.css';
 import Page1 from './components/Page1';
 import Weather from './components/Weather';
 import{
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+ Routes,
+ Route
 } from "react-router-dom";
 
 
@@ -15,6 +13,7 @@ function App() {
    <>
    
    <div className="page1"><Page1/></div>
+
    
     
    </>
